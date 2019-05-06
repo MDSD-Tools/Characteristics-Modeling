@@ -30,8 +30,7 @@ Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.ocl.pivot;visibility:=reexport,
  org.eclipse.ocl.examples.codegen;visibility:=reexport,
  org.eclipse.core.runtime,
- tools.mdsd.modelingfoundations.identifier;bundle-version="0.1.0";visibility:=reexport,
- org.eclipse.emf.cdo;bundle-version="4.6.100";visibility:=reexport,
+ tools.mdsd.modelingfoundations.identifier;visibility:=reexport,
  tools.mdsd.characteristics.mwe2;resolution:=optional
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: tools.mdsd.characteristics.Activator

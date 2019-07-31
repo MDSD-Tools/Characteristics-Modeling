@@ -1,13 +1,13 @@
 package tools.mdsd.characteristics.services.basic;
 
-import static tools.mdsd.characteristics.services.Defaults.Argument;
-import static tools.mdsd.characteristics.services.Defaults.ECLASS_FILTER;
+import static tools.mdsd.somde.services.Defaults.Argument;
+import static tools.mdsd.somde.services.Defaults.ECLASS_FILTER;
 import org.eclipse.emf.ecore.EDataType;
 import tools.mdsd.characteristics.properties.basic.EDataTypeBased;
-import tools.mdsd.characteristics.services.ServiceRegistrationFacade;
 import tools.mdsd.characteristics.services.StaticManifestationSerializationService;
 import tools.mdsd.characteristics.valuetype.ValueType;
 import tools.mdsd.characteristics.valuetype.ValuetypePackage;
+import tools.mdsd.somde.services.ServiceRegistrationFacade;
 
 public class EDataTypeBasedStaticManifestationSerializationService
         implements StaticManifestationSerializationService {

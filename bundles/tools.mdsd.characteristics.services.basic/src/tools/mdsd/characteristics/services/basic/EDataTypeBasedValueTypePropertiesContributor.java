@@ -1,15 +1,15 @@
 package tools.mdsd.characteristics.services.basic;
 
-import static tools.mdsd.characteristics.services.Defaults.Argument;
-import static tools.mdsd.characteristics.services.Defaults.ECLASS_FILTER;
+import static tools.mdsd.somde.services.Defaults.Argument;
+import static tools.mdsd.somde.services.Defaults.ECLASS_FILTER;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import tools.mdsd.characteristics.properties.basic.BasicPackage;
-import tools.mdsd.characteristics.services.ServiceRegistrationFacade;
 import tools.mdsd.characteristics.services.ValueTypePropertyContributor;
 import tools.mdsd.characteristics.valuetype.ValueType;
 import tools.mdsd.characteristics.valuetype.ValuetypePackage;
+import tools.mdsd.somde.services.ServiceRegistrationFacade;
 
 public class EDataTypeBasedValueTypePropertiesContributor implements ValueTypePropertyContributor {
 

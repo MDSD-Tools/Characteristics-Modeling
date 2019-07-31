@@ -25,6 +25,16 @@ Workflow {
 		}
 		
 		uriMap = ContextDependentMapping {
+            onRunningPlatform = "platform:/plugin/tools.mdsd.somde.realm/model/realm.genmodel"
+            onStandalone = "platform:/resource/tools.mdsd.somde.realm/model/realm.genmodel"
+        }
+        
+        uriMap = ContextDependentMapping {
+            onRunningPlatform = "platform:/plugin/tools.mdsd.somde.realm/model/realm.ecore"
+            onStandalone = "platform:/resource/tools.mdsd.somde.realm/model/realm.ecore"
+        }
+		
+		uriMap = ContextDependentMapping {
 			onRunningPlatform = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel"
 			onStandalone = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
 		}
@@ -76,10 +86,6 @@ Workflow {
 			gen = "platform:/resource/tools.mdsd.characteristics/src-gen"
 			src = "platform:/resource/tools.mdsd.characteristics/src"
 		}
-        folders = {
-            gen = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/src-gen"
-            src = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/src"
-        }
 		folders = {
 			gen = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src-gen"
 			src = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src"

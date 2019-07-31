@@ -8,7 +8,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" minimalReflectiveMethods="false" complianceLevel="8.0"
     copyrightFields="false" editPluginID="tools.mdsd.characteristics.edit" editorPluginID="tools.mdsd.characteristics.editor"
-    usedGenPackages="platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier ../../tools.mdsd.characteristics.realm/model/realm.genmodel#//realm platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    usedGenPackages="platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier ../../tools.mdsd.somde.realm/model/realm.genmodel#//realm platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true" decoration="Live">
   <foreignModel>characteristics.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>

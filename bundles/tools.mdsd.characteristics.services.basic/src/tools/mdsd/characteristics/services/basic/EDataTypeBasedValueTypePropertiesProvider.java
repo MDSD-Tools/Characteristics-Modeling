@@ -1,15 +1,15 @@
 package tools.mdsd.characteristics.services.basic;
 
-import static tools.mdsd.characteristics.services.Defaults.Argument;
-import static tools.mdsd.characteristics.services.Defaults.ECLASS_FILTER;
-import static tools.mdsd.characteristics.services.Defaults.OBJECT_IDENTITY;
+import static tools.mdsd.somde.services.Defaults.Argument;
+import static tools.mdsd.somde.services.Defaults.ECLASS_FILTER;
+import static tools.mdsd.somde.services.Defaults.OBJECT_IDENTITY;
 import tools.mdsd.characteristics.properties.basic.BasicPackage;
 import tools.mdsd.characteristics.properties.basic.EDataTypeBased;
-import tools.mdsd.characteristics.services.ServiceRegistrationFacade;
 import tools.mdsd.characteristics.services.ValueTypePropertyProvider;
 import tools.mdsd.characteristics.valuetype.EDataTypeValueType;
 import tools.mdsd.characteristics.valuetype.ValueType;
 import tools.mdsd.characteristics.valuetype.ValuetypePackage;
+import tools.mdsd.somde.services.ServiceRegistrationFacade;
 
 public class EDataTypeBasedValueTypePropertiesProvider implements ValueTypePropertyProvider {
 

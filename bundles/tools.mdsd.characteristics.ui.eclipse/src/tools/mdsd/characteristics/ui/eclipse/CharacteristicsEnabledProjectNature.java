@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.osgi.service.prefs.BackingStoreException;
-import tools.mdsd.characteristics.realm.RealmFactory;
+import tools.mdsd.somde.realm.RealmFactory;
 
 public class CharacteristicsEnabledProjectNature implements IProjectNature {
     // ID of the natures, which consists of Bundle-SymbolicName + ID
@@ -50,7 +50,7 @@ public class CharacteristicsEnabledProjectNature implements IProjectNature {
 
         if (res.getContents().size() == 0) {
             // TODO copy template model
-            res.getContents().add(RealmFactory.eINSTANCE.createCharacteristicsModelingRealm());
+            res.getContents().add(RealmFactory.eINSTANCE.createServiceOrientedModelingRealm());
         } else if (!CharacteristicsEclipseUISupportExtension.validateModelingRealm(res)) {
             throw new CoreException(
                     new Status(IStatus.ERROR, CharacteristicsEclipseUISupportExtension.PLUGIN_ID,

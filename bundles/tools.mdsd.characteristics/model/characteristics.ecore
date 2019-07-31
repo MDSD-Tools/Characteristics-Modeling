@@ -288,7 +288,7 @@
       <eLiterals name="Optional" value="1"/>
       <eLiterals name="Invalid"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ProfileActivation" eSuperTypes="../../tools.mdsd.characteristics.realm/model/realm.ecore#//ConfigurationItem">
+    <eClassifiers xsi:type="ecore:EClass" name="ProfileActivation" eSuperTypes="../../tools.mdsd.somde.realm/model/realm.ecore#//ConfigurationItem">
       <eStructuralFeatures xsi:type="ecore:EReference" name="activatedProfile" lowerBound="1"
           eType="#//characteristic/CharacteristicProfile"/>
     </eClassifiers>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
-   <extension-point id="tools.mdsd.characteristics.services.service" name="Characteristics Internal API Service" schema="schema/tools.mdsd.characteristics.services.service.exsd"/>
-   <extension-point id="tools.mdsd.characteristics.services.implementation" name="Characteristics Internal API Service Implementation" schema="schema/tools.mdsd.characteristics.services.implementation.exsd"/>
-
-</plugin>

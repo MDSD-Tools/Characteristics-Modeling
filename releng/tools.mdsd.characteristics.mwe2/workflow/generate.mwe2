@@ -46,31 +46,6 @@ Workflow {
 		srcPath = "platform:/resource/tools.mdsd.characteristics.edit/src"
 		srcPath = "platform:/resource/tools.mdsd.characteristics.editor/src"
 	}
-		
-	component = EcoreGenerator {
-        generateCustomClasses = false
-        generateEdit = true
-        generateEditor = false
-        genModel = "platform:/resource/tools.mdsd.characteristics.realm/model/realm.genmodel"
-        srcPath = "platform:/resource/tools.mdsd.characteristics.realm/src"
-    }
-	
-	component = EcoreGenerator {
-		generateCustomClasses = false
-		generateEdit = true
-		generateEditor = false
-		genModel = "platform:/resource/tools.mdsd.characteristics.realm.guicebased/model/guicebased.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.realm.guicebased/src"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.edit/src"
-	}
-	
-   component = EcoreGenerator {
-        generateCustomClasses = false
-        generateEdit = false
-        generateEditor = false
-        genModel = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/model/guiceTest.genmodel"
-        srcPath = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/src"
-    }
 	
 	component = EcoreGenerator {
 		generateCustomClasses = false
@@ -101,10 +76,6 @@ Workflow {
 			gen = "platform:/resource/tools.mdsd.characteristics/src-gen"
 			src = "platform:/resource/tools.mdsd.characteristics/src"
 		}
-        folders = {
-            gen = "platform:/resource/tools.mdsd.characteristics.realm/src-gen"
-            src = "platform:/resource/tools.mdsd.characteristics.realm/src"
-        }
         folders = {
             gen = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/src-gen"
             src = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/src"

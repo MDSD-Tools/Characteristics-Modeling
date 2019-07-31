@@ -15,5 +15,5 @@ Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  tools.mdsd.modelingfoundations.identifier;visibility:=reexport,
  org.eclipse.core.runtime,
  tools.mdsd.characteristics.mwe2;resolution:=optional,
- tools.mdsd.characteristics.model;bundle-version="0.1.0"
+ tools.mdsd.characteristics;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy

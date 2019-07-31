@@ -15,4 +15,44 @@
             genModel="model/basicProperties.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated characteristics -->
+      <package
+            uri="http://www.mdsd.tools/characteristics/api/1.0"
+            class="tools.mdsd.characteristics.api.ApiPackage"
+            genModel="model/characteristics.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated characteristics -->
+      <package
+            uri="http://www.mdsd.tools/characteristics/manifestation/1.0"
+            class="tools.mdsd.characteristics.manifestation.ManifestationPackage"
+            genModel="model/characteristics.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated characteristics -->
+      <package
+            uri="http://www.mdsd.tools/characteristics/binding/1.0"
+            class="tools.mdsd.characteristics.binding.BindingPackage"
+            genModel="model/characteristics.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated characteristics -->
+      <package
+            uri="http://www.mdsd.tools/characteristics/characteristic/1.0"
+            class="tools.mdsd.characteristics.characteristic.CharacteristicPackage"
+            genModel="model/characteristics.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated characteristics -->
+      <package
+            uri="http://www.mdsd.tools/characteristics/valuetype/1.0"
+            class="tools.mdsd.characteristics.valuetype.ValuetypePackage"
+            genModel="model/characteristics.genmodel"/>
+   </extension>
+
 </plugin>

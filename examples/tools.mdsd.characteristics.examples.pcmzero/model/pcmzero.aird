@@ -6,10 +6,11 @@
     <semanticResources>platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel</semanticResources>
-    <semanticResources>platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore</semanticResources>
-    <semanticResources>platform:/resource/tools.mdsd.characteristics.model/model/characteristics.genmodel</semanticResources>
+    <semanticResources>platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore</semanticResources>
+    <semanticResources>platform:/resource/tools.mdsd.characteristics/model/characteristics.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
+    <semanticResources>platform:/resource/tools.mdsd.somde.realm/model/realm.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_yLVrMFRqEemA3eElUMpXYA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yMQRMFRqEemA3eElUMpXYA" name="pcmzero" repPath="#_yL9WQFRqEemA3eElUMpXYA">
@@ -560,8 +561,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_ko9ckFRwEemuA_8qpXlrxg" name="CharacterizationContext" tooltipText="" outgoingEdges="_kpPJYFRwEemuA_8qpXlrxg _kpQXgFRwEemuA_8qpXlrxg" incomingEdges="_kpPJYFRwEemuA_8qpXlrxg _kpQXgFRwEemuA_8qpXlrxg _kpXsQFRwEemuA_8qpXlrxg _pRl0nFRwEemuA_8qpXlrxg _p4TPQFRwEemuA_8qpXlrxg _qeu9IFRwEemuA_8qpXlrxg _q_JinFRwEemuA_8qpXlrxg" width="12" height="10">
-      <target xmi:type="ecore:EClass" href="platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore#//binding/CharacterizationContext"/>
-      <semanticElements xmi:type="ecore:EClass" href="platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore#//binding/CharacterizationContext"/>
+      <target xmi:type="ecore:EClass" href="platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore#//binding/CharacterizationContext"/>
+      <semanticElements xmi:type="ecore:EClass" href="platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore#//binding/CharacterizationContext"/>
       <decorations xmi:type="viewpoint:Decoration" uid="_ko-qsFRwEemuA_8qpXlrxg">
         <description xmi:type="description:SemanticBasedDecoration" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@decorationDescriptionsSet/@decorationDescriptions[name='External']"/>
       </decorations>
@@ -574,8 +575,8 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_kpK38FRwEemuA_8qpXlrxg" name=" bindings : CharacteristicBinding" tooltipText="">
-        <target xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore#//binding/CharacterizationContext/bindings"/>
-        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore#//binding/CharacterizationContext/bindings"/>
+        <target xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore#//binding/CharacterizationContext/bindings"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore#//binding/CharacterizationContext/bindings"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_kpLfAFRwEemuA_8qpXlrxg" labelAlignment="LEFT" color="114,159,207">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
@@ -583,8 +584,8 @@
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kpPJYFRwEemuA_8qpXlrxg" name="[0..*] /includesContext" sourceNode="_ko9ckFRwEemuA_8qpXlrxg" targetNode="_ko9ckFRwEemuA_8qpXlrxg">
-      <target xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore#//binding/CharacterizationContext/includesContext"/>
-      <semanticElements xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore#//binding/CharacterizationContext/includesContext"/>
+      <target xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore#//binding/CharacterizationContext/includesContext"/>
+      <semanticElements xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore#//binding/CharacterizationContext/includesContext"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_kpPwc1RwEemuA_8qpXlrxg" description="_kpPwcFRwEemuA_8qpXlrxg" routingStyle="manhattan" strokeColor="114,159,207">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_kpPwdVRwEemuA_8qpXlrxg" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
@@ -596,8 +597,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kpQXgFRwEemuA_8qpXlrxg" name="[0..*] /refinesContext" sourceNode="_ko9ckFRwEemuA_8qpXlrxg" targetNode="_ko9ckFRwEemuA_8qpXlrxg">
-      <target xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore#//binding/CharacterizationContext/refinesContext"/>
-      <semanticElements xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore#//binding/CharacterizationContext/refinesContext"/>
+      <target xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore#//binding/CharacterizationContext/refinesContext"/>
+      <semanticElements xmi:type="ecore:EReference" href="platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore#//binding/CharacterizationContext/refinesContext"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_kpQ-kFRwEemuA_8qpXlrxg" description="_kpPwcFRwEemuA_8qpXlrxg" routingStyle="manhattan" strokeColor="114,159,207">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_kpQ-klRwEemuA_8qpXlrxg" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>

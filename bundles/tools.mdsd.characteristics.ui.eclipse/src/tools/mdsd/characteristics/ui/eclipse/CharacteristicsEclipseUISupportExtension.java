@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
-import tools.mdsd.characteristics.api.ApiPackage;
+import tools.mdsd.somde.realm.RealmPackage;
 
 public class CharacteristicsEclipseUISupportExtension {
 
@@ -57,7 +57,7 @@ public class CharacteristicsEclipseUISupportExtension {
     
     public static boolean validateModelingRealm(Resource res) {
         return !res.getContents().isEmpty()
-                && ApiPackage.eINSTANCE.getCharacteristicsModelingRealm()
+                && RealmPackage.eINSTANCE.getServiceOrientedModelingRealm()
                         .isInstance(res.getContents().get(0))
                 && (Diagnostician.INSTANCE.validate(res.getContents().get(0)).getSeverity()
                         & Diagnostic.OK) == Diagnostic.OK;

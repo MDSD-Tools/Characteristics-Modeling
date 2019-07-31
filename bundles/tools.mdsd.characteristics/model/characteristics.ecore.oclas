@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pivot:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pivot="http://www.eclipse.org/ocl/2015/Pivot"
+    xsi:schemaLocation="http://www.eclipse.org/ocl/2015/Pivot java://org.eclipse.ocl.pivot.PivotPackage" name="characteristics.ecore.oclas" externalURI="platform:/resource/tools.mdsd.characteristics./model/characteristics.ecore.oclas">
+  <ownedImports name="identifier" importedNamespace="pivot:Package platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore.oclas#P.identifier"/>
+  <ownedPackages xmi:id="P.characteristics" name="characteristics" URI="http://www.mdsd.tools/characteristics/1.0" nsPrefix="characteristics">
+    <ownedPackages xmi:id="P.characteristics.manifestation" name="manifestation" URI="http://www.mdsd.tools/characteristics/manifestation/1.0"
+        nsPrefix="manifestation">
+      <ownedClasses xmi:id="T.characteristics.manifestation.DerivedManifestation" name="DerivedManifestation" isAbstract="true" superClasses="#T.characteristics.manifestation.Manifestation">
+        <ownedProperties xmi:id="p.characteristics.manifestation.DerivedManifestation.requiredCharacterizations" name="requiredCharacterizations"
+            type="#//@ownedPackages.1/@ownedClasses.0" isComposite="true" opposite="#p.characteristics.manifestation.ManifestationRequirement.derivedManifestation"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.DerivedManifestation.manifestationProviders" name="manifestationProviders"
+            type="#//@ownedPackages.1/@ownedClasses.1" opposite="#p.characteristics.manifestation.RequiredManifestationProvider.DerivedManifestation"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.manifestation.Manifestation" name="Manifestation" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedInvariants xmi:id="cicharacteristics.manifestation.Manifestation.ManifestationMustProduceSamplesOfTheCorrectValueType" name="ManifestationMustProduceSamplesOfTheCorrectValueType">
+          <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="self.valuetype.adheresToValueType(self.sample())"/>
+        </ownedInvariants>
+        <ownedOperations xmi:id="o.characteristics.manifestation.Manifestation.sample" name="sample" isRequired="false" type="#T.characteristics.manifestation.EManifestationObject"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.Manifestation.valuetype" name="valuetype" type="#T.characteristics.valuetype.ValueType"
+            opposite="#p.characteristics.valuetype.ValueType.Manifestation"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.Manifestation.ExplicitSetValueType" name="ExplicitSetValueType" isRequired="false"
+            type="#T.characteristics.valuetype.ExplicitSetValueType" isImplicit="true" opposite="#p.characteristics.valuetype.ExplicitSetValueType.explicitValues"/>
+        <ownedProperties xmi:id="op.characteristics.manifestation.Category.manifestation" name="Category" isRequired="false" type="#T.characteristics.manifestation.Category"
+            isImplicit="true" opposite="#p.characteristics.manifestation.Category.manifestation"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.Manifestation.CharacteristicManifestation" name="CharacteristicManifestation"
+            isRequired="false" type="#T.characteristics.instance.CharacteristicManifestation" isImplicit="true" opposite="#p.characteristics.instance.CharacteristicManifestation.manifestation"/>
+        <ownedProperties xmi:id="op.characteristics.manifestation.Category.probability" name="Category" isRequired="false" type="#T.characteristics.manifestation.Category"
+            isImplicit="true" opposite="#p.characteristics.manifestation.Category.probability"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.manifestation.ProbabilisticManifestation" name="ProbabilisticManifestation" isAbstract="true"
+          superClasses="#T.characteristics.manifestation.Manifestation"/>
+      <ownedClasses xmi:id="T.characteristics.manifestation.ManifestationRequirement" name="ManifestationRequirement" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedProperties xmi:id="p.characteristics.manifestation.ManifestationRequirement.derivedManifestation" name="derivedManifestation"
+            isRequired="false" type="#T.characteristics.manifestation.DerivedManifestation" opposite="#p.characteristics.manifestation.DerivedManifestation.requiredCharacterizations"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.ManifestationRequirement.characteristic" name="characteristic" type="#T.characteristics.characteristic.Characteristic"
+            opposite="#p.characteristics.characteristic.Characteristic.ManifestationRequirement"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.ManifestationRequirement.requiredCharacterizations" name="requiredCharacterizations"
+            type="#//@ownedPackages.1/@ownedClasses.0" isComposite="true" opposite="#p.characteristics.manifestation.ManifestationRequirement.ManifestationRequirement"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.ManifestationRequirement.ManifestationRequirement" name="ManifestationRequirement"
+            isRequired="false" type="#T.characteristics.manifestation.ManifestationRequirement" isImplicit="true" opposite="#p.characteristics.manifestation.ManifestationRequirement.requiredCharacterizations"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.manifestation.DiscreteProbabilityDistributionManifestation" name="DiscreteProbabilityDistributionManifestation"
+          isAbstract="true" superClasses="#T.characteristics.manifestation.ProbabilisticManifestation">
+        <ownedProperties xmi:id="p.characteristics.manifestation.DiscreteProbabilityDistributionManifestation.manifestations" name="manifestations"
+            isRequired="false" isDerived="true" isTransient="true"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.manifestation.StaticManifestation" name="StaticManifestation" isAbstract="true" superClasses="#T.characteristics.manifestation.Manifestation">
+        <ownedOperations xmi:id="o.characteristics.manifestation.StaticManifestation.sample" name="sample" isRequired="false" type="#T.characteristics.manifestation.EManifestationObject">
+          <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self.value"/>
+        </ownedOperations>
+        <ownedOperations xmi:id="o.characteristics.manifestation.StaticManifestation.getStaticValue" name="getStaticValue" isRequired="false"
+            type="#T.characteristics.manifestation.EManifestationObject"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.StaticManifestation.value" name="value" isRequired="false" type="#T.characteristics.manifestation.EManifestationObject"
+            isDerived="true" isTransient="true"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.manifestation.StaticObjectManifestation" name="StaticObjectManifestation" superClasses="#T.characteristics.manifestation.StaticManifestation">
+        <ownedOperations xmi:id="o.characteristics.manifestation.StaticObjectManifestation.getStaticValue" name="getStaticValue" isRequired="false"
+            type="#T.characteristics.manifestation.EManifestationObject">
+          <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self.valueObject"/>
+        </ownedOperations>
+        <ownedProperties xmi:id="p.characteristics.manifestation.StaticObjectManifestation.valueObject" name="valueObject" isRequired="false"
+            type="#T.characteristics.manifestation.EManifestationObject"/>
+      </ownedClasses>
+      <ownedClasses xsi:type="pivot:DataType" xmi:id="T.characteristics.manifestation.EManifestationObject" name="EManifestationObject"
+          instanceClassName="java.lang.Object" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"/>
+      <ownedClasses xmi:id="T.characteristics.manifestation.CategoricalProbabilityMassFunction" name="CategoricalProbabilityMassFunction"
+          superClasses="#T.characteristics.manifestation.DiscreteProbabilityDistributionManifestation">
+        <ownedProperties xmi:id="p.characteristics.manifestation.CategoricalProbabilityMassFunction.categories" name="categories" type="#//@ownedPackages.1/@ownedClasses.2"
+            isComposite="true" opposite="#p.characteristics.manifestation.Category.CategoricalProbabilityMassFunction"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.manifestation.Category" name="Category" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedProperties xmi:id="p.characteristics.manifestation.Category.manifestation" name="manifestation" type="#T.characteristics.manifestation.Manifestation"
+            isComposite="true" opposite="#op.characteristics.manifestation.Category.manifestation"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.Category.probability" name="probability" type="#T.characteristics.manifestation.Manifestation"
+            isComposite="true" opposite="#op.characteristics.manifestation.Category.probability"/>
+        <ownedProperties xmi:id="p.characteristics.manifestation.Category.CategoricalProbabilityMassFunction" name="CategoricalProbabilityMassFunction"
+            isRequired="false" type="#T.characteristics.manifestation.CategoricalProbabilityMassFunction" isImplicit="true" opposite="#p.characteristics.manifestation.CategoricalProbabilityMassFunction.categories"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.manifestation.RequiredManifestationProvider" name="RequiredManifestationProvider" isAbstract="true"
+          superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedOperations xmi:id="o.characteristics.manifestation.RequiredManifestationProvider.satisfyRequirement..characteristics.manifestation.ManifestationRequirement"
+            name="satisfyRequirement" isRequired="false" type="#T.characteristics.manifestation.Manifestation">
+          <ownedParameters xmi:id="p0o.characteristics.manifestation.RequiredManifestationProvider.satisfyRequirement..characteristics.manifestation.ManifestationRequirement"
+              name="requirement" isRequired="false" type="#T.characteristics.manifestation.ManifestationRequirement"/>
+        </ownedOperations>
+        <ownedProperties xmi:id="p.characteristics.manifestation.RequiredManifestationProvider.DerivedManifestation" name="DerivedManifestation"
+            type="#//@ownedPackages.1/@ownedClasses.3" isImplicit="true" opposite="#p.characteristics.manifestation.DerivedManifestation.manifestationProviders"/>
+      </ownedClasses>
+    </ownedPackages>
+    <ownedPackages xmi:id="P.characteristics.instance" name="instance" URI="http://www.mdsd.tools/characteristics/instance/1.0" nsPrefix="instance">
+      <ownedClasses xmi:id="T.characteristics.instance.CharacteristicManifestation" name="CharacteristicManifestation" superClasses="#T.characteristics.instance.Characterizable">
+        <ownedProperties xmi:id="p.characteristics.instance.CharacteristicManifestation.manifestation" name="manifestation" type="#T.characteristics.manifestation.Manifestation"
+            isComposite="true" opposite="#p.characteristics.manifestation.Manifestation.CharacteristicManifestation"/>
+        <ownedProperties xmi:id="p.characteristics.instance.CharacteristicManifestation.characteristic" name="characteristic" type="#T.characteristics.characteristic.Characteristic"
+            opposite="#p.characteristics.characteristic.Characteristic.CharacteristicManifestation"/>
+        <ownedProperties xmi:id="op.characteristics.instance.Characterizable.manifestations" name="Characterizable" type="#//@ownedPackages.1/@ownedClasses.4"
+            isImplicit="true" opposite="#p.characteristics.instance.Characterizable.manifestations"/>
+        <ownedProperties xmi:id="op.characteristics.instance.Characterizable.localManifestations" name="Characterizable" isRequired="false"
+            type="#T.characteristics.instance.Characterizable" isImplicit="true" opposite="#p.characteristics.instance.Characterizable.localManifestations"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.instance.Characterizable" name="Characterizable" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedProperties xmi:id="p.characteristics.instance.Characterizable.localManifestations" name="localManifestations" type="#//@ownedPackages.1/@ownedClasses.5"
+            isComposite="true" opposite="#op.characteristics.instance.Characterizable.localManifestations"/>
+        <ownedProperties xmi:id="p.characteristics.instance.Characterizable.manifestations" name="manifestations" type="#//@ownedPackages.1/@ownedClasses.5"
+            isDerived="true" isReadOnly="true" isTransient="true" opposite="#op.characteristics.instance.Characterizable.manifestations"/>
+      </ownedClasses>
+    </ownedPackages>
+    <ownedPackages xmi:id="P.characteristics.characteristic" name="characteristic" URI="http://www.mdsd.tools/characteristics/characteristic/1.0"
+        nsPrefix="characteristic">
+      <ownedClasses xmi:id="T.characteristics.characteristic.Characteristic" name="Characteristic" superClasses="#T.characteristics.characteristic.Characterizing #T.characteristics.instance.Characterizable">
+        <ownedInvariants xmi:id="cicharacteristics.characteristic.Characteristic.characteristicCanOnlyBeCharacterizedWithManifestationsOfNestedCharacteristics"
+            name="characteristicCanOnlyBeCharacterizedWithManifestationsOfNestedCharacteristics">
+          <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="&#xA;&#x9;&#x9;&#x9;&#x9;self.localManifestations->forAll(it | self.characteristics->exists(it.characteristic))"/>
+        </ownedInvariants>
+        <ownedOperations xmi:id="o.characteristics.characteristic.Characteristic.computeCharacteristic" name="computeCharacteristic" type="#T.characteristics.characteristic.Characteristic">
+          <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self"/>
+        </ownedOperations>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.valueType" name="valueType" isRequired="false" type="#T.characteristics.valuetype.ValueType"
+            opposite="#p.characteristics.valuetype.ValueType.Characteristic"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.name" name="name" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.localCharacteristics" name="localCharacteristics" type="#//@ownedPackages.1/@ownedClasses.6"
+            isComposite="true" opposite="#p.characteristics.characteristic.Characterizing.Characteristic"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.refinesCharacteristics" name="refinesCharacteristics"
+            type="#//@ownedPackages.1/@ownedClasses.7" opposite="#op.characteristics.characteristic.Characteristic.refinesCharacteristics"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.characteristics" name="characteristics" type="#//@ownedPackages.1/@ownedClasses.8"
+            isDerived="true" isReadOnly="true" isTransient="true" isVolatile="true" opposite="#op.characteristics.characteristic.Characteristic.characteristics">
+          <ownedExpression xsi:type="pivot:ExpressionInOCL" body="localCharacteristics.characteristic->union(refinesCharacteristics.characteristics)"/>
+        </ownedProperties>
+        <ownedProperties xmi:id="op.characteristics.characteristic.Characteristic.characteristics" name="Characteristic" type="#//@ownedPackages.1/@ownedClasses.9"
+            isImplicit="true" opposite="#p.characteristics.characteristic.Characteristic.characteristics"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.CharacteristicManifestation" name="CharacteristicManifestation"
+            type="#//@ownedPackages.1/@ownedClasses.10" isImplicit="true" opposite="#p.characteristics.instance.CharacteristicManifestation.characteristic"/>
+        <ownedProperties xmi:id="op.characteristics.characteristic.Characteristic.refinesCharacteristics" name="Characteristic" type="#//@ownedPackages.1/@ownedClasses.9"
+            isImplicit="true" opposite="#p.characteristics.characteristic.Characteristic.refinesCharacteristics"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.ManifestationRequirement" name="ManifestationRequirement"
+            type="#//@ownedPackages.1/@ownedClasses.11" isImplicit="true" opposite="#p.characteristics.manifestation.ManifestationRequirement.characteristic"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.Characterizing" name="Characterizing" type="#//@ownedPackages.1/@ownedClasses.12"
+            isImplicit="true" opposite="#p.characteristics.characteristic.Characterizing.characteristic"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.CharacteristicApplicationRule" name="CharacteristicApplicationRule"
+            type="#//@ownedPackages.1/@ownedClasses.13" isImplicit="true" opposite="#p.characteristics.characteristic.CharacteristicApplicationRule.allowedCharacteristics"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.CharacteristicCatalog" name="CharacteristicCatalog" isRequired="false"
+            type="#T.characteristics.characteristic.CharacteristicCatalog" isImplicit="true" opposite="#p.characteristics.characteristic.CharacteristicCatalog.characteristics"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characteristic.CharacteristicReference" name="CharacteristicReference"
+            type="#//@ownedPackages.1/@ownedClasses.14" isImplicit="true" opposite="#p.characteristics.characteristic.CharacteristicReference.referencedCharacteristic"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.characteristic.CharacteristicApplicationRule" name="CharacteristicApplicationRule" isAbstract="true"
+          superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedOperations xmi:id="o.characteristics.characteristic.CharacteristicApplicationRule.isApplicableTo..-null-element-" name="isApplicableTo"
+            type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean">
+          <ownedParameters xmi:id="p0o.characteristics.characteristic.CharacteristicApplicationRule.isApplicableTo..-null-element-" name="element"
+              isRequired="false"/>
+        </ownedOperations>
+        <ownedProperties xmi:id="p.characteristics.characteristic.CharacteristicApplicationRule.allowedCharacteristics" name="allowedCharacteristics"
+            type="#//@ownedPackages.1/@ownedClasses.15" opposite="#p.characteristics.characteristic.Characteristic.CharacteristicApplicationRule"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.CharacteristicApplicationRule.CharacteristicProfile" name="CharacteristicProfile"
+            isRequired="false" type="#T.characteristics.characteristic.CharacteristicProfile" isImplicit="true" opposite="#p.characteristics.characteristic.CharacteristicProfile.applicationRules"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.characteristic.CharacteristicCatalog" name="CharacteristicCatalog" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedProperties xmi:id="p.characteristics.characteristic.CharacteristicCatalog.characteristics" name="characteristics" type="#//@ownedPackages.1/@ownedClasses.7"
+            isComposite="true" opposite="#p.characteristics.characteristic.Characteristic.CharacteristicCatalog"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.CharacteristicCatalog.profiles" name="profiles" type="#//@ownedPackages.1/@ownedClasses.16"
+            isComposite="true" opposite="#p.characteristics.characteristic.CharacteristicProfile.CharacteristicCatalog"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.characteristic.CharacteristicProfile" name="CharacteristicProfile" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedProperties xmi:id="p.characteristics.characteristic.CharacteristicProfile.applicationRules" name="applicationRules" type="#//@ownedPackages.1/@ownedClasses.17"
+            isComposite="true" opposite="#p.characteristics.characteristic.CharacteristicApplicationRule.CharacteristicProfile"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.CharacteristicProfile.name" name="name" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.CharacteristicProfile.CharacteristicCatalog" name="CharacteristicCatalog"
+            isRequired="false" type="#T.characteristics.characteristic.CharacteristicCatalog" isImplicit="true" opposite="#p.characteristics.characteristic.CharacteristicCatalog.profiles"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.characteristic.TypeBasedCharacteristicApplicationRule" name="TypeBasedCharacteristicApplicationRule"
+          superClasses="#T.characteristics.characteristic.CharacteristicApplicationRule">
+        <ownedOperations xmi:id="o.characteristics.characteristic.TypeBasedCharacteristicApplicationRule.isApplicableTo..-null-element-"
+            name="isApplicableTo" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean">
+          <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self.legalTypes->exists(t | t.isInstance(element.oclAsType(ecore::EJavaObject)))"/>
+          <ownedParameters xmi:id="p0o.characteristics.characteristic.TypeBasedCharacteristicApplicationRule.isApplicableTo..-null-element-"
+              name="element" isRequired="false"/>
+        </ownedOperations>
+        <ownedProperties xmi:id="p.characteristics.characteristic.TypeBasedCharacteristicApplicationRule.legalTypes" name="legalTypes"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.characteristic.Characterizing" name="Characterizing" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedOperations xmi:id="o.characteristics.characteristic.Characterizing.computeCharacteristic" name="computeCharacteristic" type="#T.characteristics.characteristic.Characteristic"/>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characterizing.characteristic" name="characteristic" type="#T.characteristics.characteristic.Characteristic"
+            isDerived="true" isReadOnly="true" isTransient="true" isVolatile="true" opposite="#p.characteristics.characteristic.Characteristic.Characterizing">
+          <ownedExpression xsi:type="pivot:ExpressionInOCL" body="self.computeCharacteristic()"/>
+        </ownedProperties>
+        <ownedProperties xmi:id="p.characteristics.characteristic.Characterizing.Characteristic" name="Characteristic" isRequired="false"
+            type="#T.characteristics.characteristic.Characteristic" isImplicit="true" opposite="#p.characteristics.characteristic.Characteristic.localCharacteristics"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.characteristic.CharacteristicReference" name="CharacteristicReference" superClasses="#T.characteristics.characteristic.Characterizing">
+        <ownedOperations xmi:id="o.characteristics.characteristic.CharacteristicReference.computeCharacteristic" name="computeCharacteristic"
+            type="#T.characteristics.characteristic.Characteristic">
+          <bodyExpression xsi:type="pivot:ExpressionInOCL" body="self.referencedCharacteristic"/>
+        </ownedOperations>
+        <ownedProperties xmi:id="p.characteristics.characteristic.CharacteristicReference.referencedCharacteristic" name="referencedCharacteristic"
+            type="#T.characteristics.characteristic.Characteristic" opposite="#p.characteristics.characteristic.Characteristic.CharacteristicReference"/>
+      </ownedClasses>
+    </ownedPackages>
+    <ownedPackages xmi:id="P.characteristics.valuetype" name="valuetype" URI="http://www.mdsd.tools/characteristics/valuetype/1.0" nsPrefix="valuetype">
+      <ownedClasses xmi:id="T.characteristics.valuetype.ValueType" name="ValueType" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedOperations xmi:id="o.characteristics.valuetype.ValueType.getProperty..-null-element-" name="getProperty" isRequired="false"
+            type="#t.characteristics.valuetype.ValueType..getPropertyP">
+          <ownedSignature xmi:id="s.o.characteristics.valuetype.ValueType.getProperty..-null-element-">
+            <ownedParameters xmi:id="t.characteristics.valuetype.ValueType..getPropertyP" name="P" constrainingClasses="#T.characteristics.valuetype.ValueTypeProperty"/>
+          </ownedSignature>
+          <ownedParameters xmi:id="p0o.characteristics.valuetype.ValueType.getProperty..-null-element-" name="propertyType" isRequired="false"/>
+        </ownedOperations>
+        <ownedOperations xmi:id="o.characteristics.valuetype.ValueType.adheresToValueType..characteristics.manifestation.EManifestationObject"
+            name="adheresToValueType" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean">
+          <ownedParameters xmi:id="p0o.characteristics.valuetype.ValueType.adheresToValueType..characteristics.manifestation.EManifestationObject"
+              name="instance" isRequired="false" type="#T.characteristics.manifestation.EManifestationObject"/>
+        </ownedOperations>
+        <ownedOperations xmi:id="o.characteristics.valuetype.ValueType.hasProperty..-null-element-" name="hasProperty" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean">
+          <ownedSignature xmi:id="s.o.characteristics.valuetype.ValueType.hasProperty..-null-element-">
+            <ownedParameters xmi:id="t.characteristics.valuetype.ValueType..hasPropertyP" name="P" constrainingClasses="#T.characteristics.valuetype.ValueTypeProperty"/>
+          </ownedSignature>
+          <ownedParameters xmi:id="p0o.characteristics.valuetype.ValueType.hasProperty..-null-element-" name="propertyType" isRequired="false"/>
+        </ownedOperations>
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueType.isParametric" name="isParametric" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
+            isDerived="true" isTransient="true"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueType.properties" name="properties" type="#//@ownedPackages.1/@ownedClasses.18"
+            opposite="#p.characteristics.valuetype.ValueTypeProperty.ValueType"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueType.name" name="name" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueType.Characteristic" name="Characteristic" type="#//@ownedPackages.1/@ownedClasses.9"
+            isImplicit="true" opposite="#p.characteristics.characteristic.Characteristic.valueType"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueType.CollectionValueType" name="CollectionValueType" type="#//@ownedPackages.1/@ownedClasses.19"
+            isImplicit="true" opposite="#p.characteristics.valuetype.CollectionValueType.nestedType"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueType.ValueTypeRepository" name="ValueTypeRepository" isRequired="false"
+            type="#T.characteristics.valuetype.ValueTypeRepository" isImplicit="true" opposite="#p.characteristics.valuetype.ValueTypeRepository.valuetype"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueType.ValueTypeAlias" name="ValueTypeAlias" type="#//@ownedPackages.1/@ownedClasses.20"
+            isImplicit="true" opposite="#p.characteristics.valuetype.ValueTypeAlias.originalValueType"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueType.Manifestation" name="Manifestation" type="#//@ownedPackages.1/@ownedClasses.21"
+            isImplicit="true" opposite="#p.characteristics.manifestation.Manifestation.valuetype"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueType.ConstraintValueType" name="ConstraintValueType" type="#//@ownedPackages.1/@ownedClasses.22"
+            isImplicit="true" opposite="#p.characteristics.valuetype.ConstraintValueType.valuetype"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.valuetype.EDataTypeValueType" name="EDataTypeValueType" superClasses="#T.characteristics.valuetype.BaseValueType">
+        <ownedOperations xmi:id="o.characteristics.valuetype.EDataTypeValueType.adheresToValueType..-null-element-" name="adheresToValueType"
+            type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean">
+          <ownedAnnotations xsi:type="pivot:Annotation" name="http://www.eclipse.org/emf/2002/GenModel">
+            <ownedDetails name="body">
+              <values>return tools.mdsd.characteristics.utils.ValueTypeUtils.isInstanceOfDataType(instance, this.baseType);</values>
+            </ownedDetails>
+          </ownedAnnotations>
+          <ownedParameters xmi:id="p0o.characteristics.valuetype.EDataTypeValueType.adheresToValueType..-null-element-" name="instance"
+              isRequired="false"/>
+        </ownedOperations>
+        <ownedProperties xmi:id="p.characteristics.valuetype.EDataTypeValueType.baseType" name="baseType" isRequired="false"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.valuetype.StructuredValueType" name="StructuredValueType" superClasses="#T.characteristics.valuetype.ValueType">
+        <ownedProperties xmi:id="p.characteristics.valuetype.StructuredValueType.nestedTypes" name="nestedTypes"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.valuetype.BaseValueType" name="BaseValueType" isAbstract="true" superClasses="#T.characteristics.valuetype.ValueType"/>
+      <ownedClasses xmi:id="T.characteristics.valuetype.EnumValueType" name="EnumValueType" superClasses="#T.characteristics.valuetype.BaseValueType #T.characteristics.valuetype.ExplicitSetValueType"/>
+      <ownedClasses xmi:id="T.characteristics.valuetype.ValueTypeProperty" name="ValueTypeProperty" isAbstract="true" isInterface="true"
+          superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueTypeProperty.ValueType" name="ValueType" type="#//@ownedPackages.1/@ownedClasses.23"
+            isImplicit="true" opposite="#p.characteristics.valuetype.ValueType.properties"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.valuetype.ExplicitSetValueType" name="ExplicitSetValueType" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedProperties xmi:id="p.characteristics.valuetype.ExplicitSetValueType.explicitValues" name="explicitValues" type="#//@ownedPackages.1/@ownedClasses.24"
+            isComposite="true" opposite="#p.characteristics.manifestation.Manifestation.ExplicitSetValueType"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.valuetype.CollectionValueType" name="CollectionValueType" superClasses="#T.characteristics.valuetype.ValueType">
+        <ownedProperties xmi:id="p.characteristics.valuetype.CollectionValueType.nestedType" name="nestedType" type="#T.characteristics.valuetype.ValueType"
+            opposite="#p.characteristics.valuetype.ValueType.CollectionValueType"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.CollectionValueType.lowerBound" name="lowerBound" defaultValueString="-1"/>
+        <ownedProperties xmi:id="p.characteristics.valuetype.CollectionValueType.upperBound" name="upperBound" defaultValueString="-1"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.valuetype.ValueTypeRepository" name="ValueTypeRepository" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueTypeRepository.valuetype" name="valuetype" type="#//@ownedPackages.1/@ownedClasses.25"
+            isComposite="true" opposite="#p.characteristics.valuetype.ValueType.ValueTypeRepository"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.valuetype.ConstraintValueType" name="ConstraintValueType" superClasses="#T.characteristics.valuetype.ValueType">
+        <ownedProperties xmi:id="p.characteristics.valuetype.ConstraintValueType.valuetype" name="valuetype" type="#T.characteristics.valuetype.ValueType"
+            opposite="#p.characteristics.valuetype.ValueType.ConstraintValueType"/>
+      </ownedClasses>
+      <ownedClasses xmi:id="T.characteristics.valuetype.ValueTypeAlias" name="ValueTypeAlias" superClasses="#T.characteristics.valuetype.ValueType">
+        <ownedProperties xmi:id="p.characteristics.valuetype.ValueTypeAlias.originalValueType" name="originalValueType" type="#T.characteristics.valuetype.ValueType"
+            opposite="#p.characteristics.valuetype.ValueType.ValueTypeAlias"/>
+      </ownedClasses>
+    </ownedPackages>
+  </ownedPackages>
+  <ownedPackages xmi:id="P.$$" name="$$" URI="http://www.eclipse.org/ocl/2015/Orphanage" nsPrefix="orphanage">
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.26 #//@ownedPackages.1/@ownedClasses.27"
+        elementType="#T.characteristics.manifestation.ManifestationRequirement" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.ManifestationRequirement" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.28 #//@ownedPackages.1/@ownedClasses.29"
+        elementType="#T.characteristics.manifestation.RequiredManifestationProvider" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.RequiredManifestationProvider" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.30 #//@ownedPackages.1/@ownedClasses.31"
+        elementType="#T.characteristics.manifestation.Category" isNullFree="true" lower="1">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.Category" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.32" elementType="#T.characteristics.manifestation.DerivedManifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.DerivedManifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.33" elementType="#T.characteristics.instance.Characterizable">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.instance.Characterizable" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.34 #//@ownedPackages.1/@ownedClasses.35"
+        elementType="#T.characteristics.instance.CharacteristicManifestation" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.instance.CharacteristicManifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.36 #//@ownedPackages.1/@ownedClasses.37"
+        elementType="#T.characteristics.characteristic.Characterizing" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characterizing" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.38 #//@ownedPackages.1/@ownedClasses.39"
+        elementType="#T.characteristics.characteristic.Characteristic" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characteristic" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:SequenceType" name="Sequence" superClasses="#//@ownedPackages.1/@ownedClasses.38" elementType="#T.characteristics.characteristic.Characteristic"
+        isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characteristic" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..SequenceT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.40" elementType="#T.characteristics.characteristic.Characteristic">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characteristic" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.41" elementType="#T.characteristics.instance.CharacteristicManifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.instance.CharacteristicManifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.42" elementType="#T.characteristics.manifestation.ManifestationRequirement">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.ManifestationRequirement" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.43" elementType="#T.characteristics.characteristic.Characterizing">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characterizing" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.44" elementType="#T.characteristics.characteristic.CharacteristicApplicationRule">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicApplicationRule" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.45" elementType="#T.characteristics.characteristic.CharacteristicReference">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicReference" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.38 #//@ownedPackages.1/@ownedClasses.39"
+        elementType="#T.characteristics.characteristic.Characteristic" isNullFree="true" lower="1">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characteristic" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.46 #//@ownedPackages.1/@ownedClasses.47"
+        elementType="#T.characteristics.characteristic.CharacteristicProfile" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicProfile" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.48 #//@ownedPackages.1/@ownedClasses.49"
+        elementType="#T.characteristics.characteristic.CharacteristicApplicationRule" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicApplicationRule" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.50 #//@ownedPackages.1/@ownedClasses.51"
+        elementType="#T.characteristics.valuetype.ValueTypeProperty" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueTypeProperty" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.52" elementType="#T.characteristics.valuetype.CollectionValueType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.CollectionValueType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.53" elementType="#T.characteristics.valuetype.ValueTypeAlias">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueTypeAlias" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.54" elementType="#T.characteristics.manifestation.Manifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.Manifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.55" elementType="#T.characteristics.valuetype.ConstraintValueType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ConstraintValueType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.1/@ownedClasses.56" elementType="#T.characteristics.valuetype.ValueType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.57 #//@ownedPackages.1/@ownedClasses.58"
+        elementType="#T.characteristics.manifestation.Manifestation" isNullFree="true" lower="1">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.Manifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.1/@ownedClasses.59 #//@ownedPackages.1/@ownedClasses.60"
+        elementType="#T.characteristics.valuetype.ValueType" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.42" elementType="#T.characteristics.manifestation.ManifestationRequirement">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.ManifestationRequirement" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.42" elementType="#T.characteristics.manifestation.ManifestationRequirement">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.ManifestationRequirement" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.61" elementType="#T.characteristics.manifestation.RequiredManifestationProvider">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.RequiredManifestationProvider" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.61" elementType="#T.characteristics.manifestation.RequiredManifestationProvider">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.RequiredManifestationProvider" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.62" elementType="#T.characteristics.manifestation.Category">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.Category" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.62" elementType="#T.characteristics.manifestation.Category">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.Category" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.manifestation.DerivedManifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.DerivedManifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.instance.Characterizable">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.instance.Characterizable" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.41" elementType="#T.characteristics.instance.CharacteristicManifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.instance.CharacteristicManifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.41" elementType="#T.characteristics.instance.CharacteristicManifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.instance.CharacteristicManifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.43" elementType="#T.characteristics.characteristic.Characterizing">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characterizing" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.43" elementType="#T.characteristics.characteristic.Characterizing">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characterizing" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.40" elementType="#T.characteristics.characteristic.Characteristic">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characteristic" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.40" elementType="#T.characteristics.characteristic.Characteristic">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characteristic" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.characteristic.Characteristic">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characteristic" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.instance.CharacteristicManifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.instance.CharacteristicManifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.manifestation.ManifestationRequirement">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.ManifestationRequirement" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.characteristic.Characterizing">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.Characterizing" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.characteristic.CharacteristicApplicationRule">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicApplicationRule" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.characteristic.CharacteristicReference">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicReference" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.63" elementType="#T.characteristics.characteristic.CharacteristicProfile">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicProfile" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.63" elementType="#T.characteristics.characteristic.CharacteristicProfile">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicProfile" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.44" elementType="#T.characteristics.characteristic.CharacteristicApplicationRule">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicApplicationRule" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.44" elementType="#T.characteristics.characteristic.CharacteristicApplicationRule">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicApplicationRule" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.64" elementType="#T.characteristics.valuetype.ValueTypeProperty">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueTypeProperty" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.64" elementType="#T.characteristics.valuetype.ValueTypeProperty">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueTypeProperty" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.valuetype.CollectionValueType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.CollectionValueType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.valuetype.ValueTypeAlias">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueTypeAlias" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.manifestation.Manifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.Manifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.valuetype.ConstraintValueType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ConstraintValueType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.valuetype.ValueType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.54" elementType="#T.characteristics.manifestation.Manifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.Manifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.54" elementType="#T.characteristics.manifestation.Manifestation">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.Manifestation" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.1/@ownedClasses.56" elementType="#T.characteristics.valuetype.ValueType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.1/@ownedClasses.56" elementType="#T.characteristics.valuetype.ValueType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.manifestation.RequiredManifestationProvider">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.RequiredManifestationProvider" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.manifestation.Category">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.manifestation.Category" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.characteristic.CharacteristicProfile">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.characteristic.CharacteristicProfile" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.characteristics.valuetype.ValueTypeProperty">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.characteristics.valuetype.ValueTypeProperty" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+  </ownedPackages>
+</pivot:Model>

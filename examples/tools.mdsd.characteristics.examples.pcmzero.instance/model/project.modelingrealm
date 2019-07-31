@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<api:CharacteristicsModelingRealm xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:api="http://www.mdsd.tools/characteristics/api/1.0" xmlns:guicebasedapi="http://www.mdsd.tools/characteristics/api/guicebased/1.0">
-  <configuration xsi:type="guicebasedapi:ModuleImport" moduleFQN="tools.mdsd.characteristics.api.baseproperties.BasePropertiesExtensionModule"/>
-</api:CharacteristicsModelingRealm>

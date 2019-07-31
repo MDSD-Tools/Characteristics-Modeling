@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/tools.mdsd.characteristics/src-gen" editDirectory="/tools.mdsd.characteristics.edit/src-gen"
+    editorDirectory="/tools.mdsd.characteristics.editor/src-gen" modelPluginID="tools.mdsd.characteristics"
+    templateDirectory="" modelName="Characteristics" modelPluginClass="tools.mdsd.characteristics.CharacteristicsModelPlugin"
+    editPluginClass="tools.mdsd.characteristics.CharacteristicsEditPlugin" editorPluginClass="tools.mdsd.characteristics.CharacteristicsEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" minimalReflectiveMethods="false" complianceLevel="8.0"
+    copyrightFields="false" editPluginID="tools.mdsd.characteristics.edit" editorPluginID="tools.mdsd.characteristics.editor"
+    usedGenPackages="platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier ../../tools.mdsd.somde.realm/model/realm.genmodel#//realm platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true" decoration="Live">
+  <foreignModel>characteristics.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Characteristics" basePackage="tools.mdsd" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="characteristics.ecore#/">
+    <nestedGenPackages prefix="Api" disposableProviderFactory="true" generateModelWizard="false"
+        ecorePackage="characteristics.ecore#//api">
+      <genDataTypes ecoreDataType="characteristics.ecore#//api/Optional">
+        <genTypeParameters ecoreTypeParameter="characteristics.ecore#//api/Optional/T"/>
+      </genDataTypes>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//api/CharacteristicAccess">
+        <genOperations ecoreOperation="characteristics.ecore#//api/CharacteristicAccess/hasCharacteristic">
+          <genParameters ecoreParameter="characteristics.ecore#//api/CharacteristicAccess/hasCharacteristic/characterizable"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/CharacteristicAccess/hasCharacteristic/characteristic"/>
+        </genOperations>
+        <genOperations ecoreOperation="characteristics.ecore#//api/CharacteristicAccess/getAppliedCharacteristics">
+          <genParameters ecoreParameter="characteristics.ecore#//api/CharacteristicAccess/getAppliedCharacteristics/characterizable"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//api/ManifestationAccess">
+        <genOperations ecoreOperation="characteristics.ecore#//api/ManifestationAccess/getManifestation">
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationAccess/getManifestation/characterizable"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationAccess/getManifestation/characteristic"/>
+        </genOperations>
+        <genOperations ecoreOperation="characteristics.ecore#//api/ManifestationAccess/getManifestationOrigin">
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationAccess/getManifestationOrigin/characterizable"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationAccess/getManifestationOrigin/characteristic"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//api/ValueTypeAccess">
+        <genOperations ecoreOperation="characteristics.ecore#//api/ValueTypeAccess/getProperty">
+          <genParameters ecoreParameter="characteristics.ecore#//api/ValueTypeAccess/getProperty/valueType"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/ValueTypeAccess/getProperty/propertyType"/>
+          <genTypeParameters ecoreTypeParameter="characteristics.ecore#//api/ValueTypeAccess/getProperty/T"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//api/CharacteristicEdit">
+        <genOperations ecoreOperation="characteristics.ecore#//api/CharacteristicEdit/getApplicableCharacteristics">
+          <genParameters ecoreParameter="characteristics.ecore#//api/CharacteristicEdit/getApplicableCharacteristics/characterizable"/>
+        </genOperations>
+        <genOperations ecoreOperation="characteristics.ecore#//api/CharacteristicEdit/applyCharacteristic">
+          <genParameters ecoreParameter="characteristics.ecore#//api/CharacteristicEdit/applyCharacteristic/characterizable"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/CharacteristicEdit/applyCharacteristic/characteristic"/>
+        </genOperations>
+        <genOperations ecoreOperation="characteristics.ecore#//api/CharacteristicEdit/unapplyCharacteristic">
+          <genParameters ecoreParameter="characteristics.ecore#//api/CharacteristicEdit/unapplyCharacteristic/characterizable"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/CharacteristicEdit/unapplyCharacteristic/characteristic"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//api/ManifestationEdit">
+        <genOperations ecoreOperation="characteristics.ecore#//api/ManifestationEdit/getSpecificationType">
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationEdit/getSpecificationType/characterizable"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationEdit/getSpecificationType/characteristic"/>
+        </genOperations>
+        <genOperations ecoreOperation="characteristics.ecore#//api/ManifestationEdit/getSpecification">
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationEdit/getSpecification/characterizable"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationEdit/getSpecification/characteristic"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationEdit/getSpecification/specificationType"/>
+          <genTypeParameters ecoreTypeParameter="characteristics.ecore#//api/ManifestationEdit/getSpecification/SpecType"/>
+        </genOperations>
+        <genOperations ecoreOperation="characteristics.ecore#//api/ManifestationEdit/setSpecification">
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationEdit/setSpecification/characterizable"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationEdit/setSpecification/characteristic"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationEdit/setSpecification/specificationType"/>
+          <genParameters ecoreParameter="characteristics.ecore#//api/ManifestationEdit/setSpecification/specification"/>
+          <genTypeParameters ecoreTypeParameter="characteristics.ecore#//api/ManifestationEdit/setSpecification/SpecType"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//api/SpecificationType">
+        <genTypeParameters ecoreTypeParameter="characteristics.ecore#//api/SpecificationType/SpecType"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Manifestation" basePackage="tools.mdsd.characteristics"
+        disposableProviderFactory="true" dataTypeConverters="true" extensibleProviderFactory="true"
+        contentTypeIdentifier="" ecorePackage="characteristics.ecore#//manifestation">
+      <genDataTypes ecoreDataType="characteristics.ecore#//manifestation/EManifestationObject"/>
+      <genDataTypes ecoreDataType="characteristics.ecore#//manifestation/EManifestationSpecification"/>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/DerivedManifestation"/>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/Manifestation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/Manifestation/container"/>
+        <genOperations ecoreOperation="characteristics.ecore#//manifestation/Manifestation/sample"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//manifestation/ProbabilisticManifestation"/>
+      <genClasses ecoreClass="characteristics.ecore#//manifestation/DiscreteProbabilityDistributionManifestation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/DiscreteProbabilityDistributionManifestation/manifestations"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/StaticManifestation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/StaticManifestation/value"/>
+        <genOperations ecoreOperation="characteristics.ecore#//manifestation/StaticManifestation/sample"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//manifestation/SingleValue">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/SingleValue/explicitValue"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//manifestation/CategoricalProbabilityMassFunction">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/CategoricalProbabilityMassFunction/sumOfCategoryWeights"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/CategoricalProbabilityMassFunction/categories"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//manifestation/Category">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/Category/weight"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/Category/probability"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/Category/probabilityMassFunction"/>
+        <genOperations ecoreOperation="characteristics.ecore#//manifestation/Category/determineValueType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/ManifestationContainer">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/ManifestationContainer/manifestation"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/ManifestationContainer/valuetype"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/ManifestationContainer/specification"/>
+        <genOperations ecoreOperation="characteristics.ecore#//manifestation/ManifestationContainer/determineValueType"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Binding" basePackage="tools.mdsd.characteristics" disposableProviderFactory="true"
+        extensibleProviderFactory="true" ecorePackage="characteristics.ecore#//binding">
+      <genClasses provider="Stateful" image="false" ecoreClass="characteristics.ecore#//binding/CharacterizationContext">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//binding/CharacterizationContext/bindings"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//binding/CharacterizationContext/includesContext"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//binding/CharacterizationContext/refinesContext"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//binding/CharacterizationContext/localBindings"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//binding/CharacteristicBinding">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//binding/CharacteristicBinding/characteristic"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//binding/CharacteristicBinding/target"/>
+        <genOperations ecoreOperation="characteristics.ecore#//binding/CharacteristicBinding/determineValueType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//binding/Namespace"/>
+      <genClasses ecoreClass="characteristics.ecore#//binding/NamespaceImport">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//binding/NamespaceImport/importedName"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//binding/NamespaceImport/importedNamespace"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Characteristic" basePackage="tools.mdsd.characteristics"
+        disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="characteristics.ecore#//characteristic">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="characteristics.ecore#//characteristic/CharacteristicApplicability">
+        <genEnumLiterals ecoreEnumLiteral="characteristics.ecore#//characteristic/CharacteristicApplicability/Mandatory"/>
+        <genEnumLiterals ecoreEnumLiteral="characteristics.ecore#//characteristic/CharacteristicApplicability/Optional"/>
+        <genEnumLiterals ecoreEnumLiteral="characteristics.ecore#//characteristic/CharacteristicApplicability/Invalid"/>
+      </genEnums>
+      <genClasses ecoreClass="characteristics.ecore#//characteristic/Characteristic">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/Characteristic/valueType"/>
+        <genOperations ecoreOperation="characteristics.ecore#//characteristic/Characteristic/computeCharacteristic"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//characteristic/CharacteristicApplicationRule">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/CharacteristicApplicationRule/allowedCharacteristics"/>
+        <genOperations ecoreOperation="characteristics.ecore#//characteristic/CharacteristicApplicationRule/determineApplicability">
+          <genParameters ecoreParameter="characteristics.ecore#//characteristic/CharacteristicApplicationRule/determineApplicability/element"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//characteristic/CharacteristicCatalog">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/CharacteristicCatalog/characteristics"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/CharacteristicCatalog/profiles"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//characteristic/CharacteristicProfile">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/CharacteristicProfile/applicationRules"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//characteristic/TypeBasedCharacteristicApplicationRule">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/TypeBasedCharacteristicApplicationRule/legalTypes"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//characteristic/TypeBasedCharacteristicApplicationRule/mandatory"/>
+        <genOperations ecoreOperation="characteristics.ecore#//characteristic/TypeBasedCharacteristicApplicationRule/determineApplicability">
+          <genParameters ecoreParameter="characteristics.ecore#//characteristic/TypeBasedCharacteristicApplicationRule/determineApplicability/element"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//characteristic/Characterizing">
+        <genOperations ecoreOperation="characteristics.ecore#//characteristic/Characterizing/computeCharacteristic"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//characteristic/CharacteristicReference">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/CharacteristicReference/referencedCharacteristic"/>
+        <genOperations ecoreOperation="characteristics.ecore#//characteristic/CharacteristicReference/computeCharacteristic"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//characteristic/ProfileActivation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/ProfileActivation/activatedProfile"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Valuetype" basePackage="tools.mdsd.characteristics"
+        disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="characteristics.ecore#//valuetype">
+      <genClasses image="false" ecoreClass="characteristics.ecore#//valuetype/ValueType">
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/getProperty">
+          <genParameters ecoreParameter="characteristics.ecore#//valuetype/ValueType/getProperty/propertyType"/>
+          <genTypeParameters ecoreTypeParameter="characteristics.ecore#//valuetype/ValueType/getProperty/P"/>
+        </genOperations>
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/adheresToValueType">
+          <genParameters ecoreParameter="characteristics.ecore#//valuetype/ValueType/adheresToValueType/instance"/>
+        </genOperations>
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/hasProperty">
+          <genParameters ecoreParameter="characteristics.ecore#//valuetype/ValueType/hasProperty/propertyType"/>
+          <genTypeParameters ecoreTypeParameter="characteristics.ecore#//valuetype/ValueType/hasProperty/P"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/EDataTypeValueType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/EDataTypeValueType/baseType"/>
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/EDataTypeValueType/adheresToValueType">
+          <genParameters ecoreParameter="characteristics.ecore#//valuetype/EDataTypeValueType/adheresToValueType/instance"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/StructuredValueType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/StructuredValueType/elements"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/BaseValueType"/>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/EnumValueType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/EnumValueType/literals"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/CollectionValueType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/CollectionValueType/nestedType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//valuetype/CollectionValueType/lowerBound"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//valuetype/CollectionValueType/upperBound"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/ValueTypeRepository">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/ValueTypeRepository/valuetype"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/ValueTypeAlias">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/ValueTypeAlias/originalValueType"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/StructuredValueTypeElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/StructuredValueTypeElement/valuetype"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/EnumLiteral">
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/EnumLiteral/determineValueType"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

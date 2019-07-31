@@ -7,6 +7,18 @@
 <plugin>
 
 
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated characteristics -->
+      <editor
+            id="tools.mdsd.characteristics.api.presentation.ApiEditorID"
+            name="%_UI_ApiEditor_label"
+            icon="icons/full/obj16/ApiModelFile.gif"
+            extensions="api"
+            class="tools.mdsd.characteristics.api.presentation.ApiEditor"
+            contributorClass="tools.mdsd.characteristics.api.presentation.ApiActionBarContributor">
+      </editor>
+   </extension>
+
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated characteristics -->
       <category
@@ -119,16 +131,6 @@
       </editor>
    </extension>
 
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated api -->
-      <editor
-            id="tools.mdsd.characteristics.api.presentation.ApiEditorID"
-            name="%_UI_ApiEditor_label"
-            icon="icons/full/obj16/ApiModelFile.gif"
-            extensions="modelingrealm"
-            class="tools.mdsd.characteristics.api.presentation.ApiEditor"
-            contributorClass="tools.mdsd.characteristics.api.presentation.ApiActionBarContributor">
-      </editor>
-   </extension>
+
 
 </plugin>

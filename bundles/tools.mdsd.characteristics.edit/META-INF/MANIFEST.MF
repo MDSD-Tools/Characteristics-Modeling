@@ -9,21 +9,22 @@ Bundle-Activator: tools.mdsd.characteristics.CharacteristicsEditPlugin$Implement
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: tools.mdsd.characteristics.binding.provider,
+Export-Package: tools.mdsd.characteristics,
+ tools.mdsd.characteristics.api.provider,
+ tools.mdsd.characteristics.binding.provider,
  tools.mdsd.characteristics.characteristic.provider,
  tools.mdsd.characteristics.edit.support,
  tools.mdsd.characteristics.manifestation.provider,
- tools.mdsd.characteristics.valuetype.provider,
- tools.mdsd.characteristics,
- tools.mdsd.characteristics.api.provider
+ tools.mdsd.characteristics.valuetype.provider
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
- tools.mdsd.characteristics.model;visibility:=reexport,
+ tools.mdsd.characteristics;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
- tools.mdsd.characteristics.edit;visibility:=reexport,
  tools.mdsd.modelingfoundations.identifier;visibility:=reexport,
- tools.mdsd.characteristics,
  tools.mdsd.modelingfoundations.identifier.edit;visibility:=reexport,
- org.eclipse.emf.ecore.edit;visibility:=reexport
+ tools.mdsd.somde.realm;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ tools.mdsd.characteristics.properties.basic,
+ tools.mdsd.somde.realm.edit;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: com.google.common.collect

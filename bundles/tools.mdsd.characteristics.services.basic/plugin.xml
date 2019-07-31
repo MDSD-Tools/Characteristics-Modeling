@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="tools.mdsd.characteristics.services.implementation">
+      <service
+            implementation="tools.mdsd.characteristics.services.basic.EDataTypeBasedStaticManifestationSerializationService"
+            servicetype="tools.mdsd.characteristics.services.api.StaticManifestationSerializationService">
+      </service>
+      <service
+            implementation="tools.mdsd.characteristics.services.basic.EDataTypeBasedValueTypePropertiesProvider"
+            servicetype="tools.mdsd.characteristics.services.api.ValueTypePropertyProvider">
+      </service>
+      <service
+            implementation="tools.mdsd.characteristics.services.basic.EDataTypeBasedValueTypePropertiesContributor"
+            servicetype="tools.mdsd.characteristics.services.api.ValueTypePropertyContributor">
+      </service>
+   </extension>
+
+</plugin>

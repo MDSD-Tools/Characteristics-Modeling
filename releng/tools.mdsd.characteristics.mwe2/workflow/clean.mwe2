@@ -17,11 +17,9 @@ Workflow {
 
 	component = URISupportingDirectoryCleaner {
 		directory = "platform:/resource/tools.mdsd.characteristics/src-gen"
-		directory = "platform:/resource/tools.mdsd.characteristics.model/src-gen"
+		directory = "platform:/resource/tools.mdsd.characteristics.properties.basic/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.edit/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.editor/src-gen"
-		directory = "platform:/resource/tools.mdsd.characteristics.api.guicebased/src-gen"
-		directory = "platform:/resource/tools.mdsd.characteristics.api.guicebased.edit/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero.edit/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero.editor/src-gen"

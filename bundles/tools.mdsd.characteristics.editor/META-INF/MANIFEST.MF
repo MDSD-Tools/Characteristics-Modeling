@@ -13,7 +13,8 @@ Export-Package: tools.mdsd.characteristics.characteristic.presentation,
  tools.mdsd.characteristics.manifestation.presentation,
  tools.mdsd.characteristics.valuetype.presentation,
  tools.mdsd.characteristics,
- tools.mdsd.characteristics.api.presentation
+ tools.mdsd.characteristics.api.presentation,
+ tools.mdsd.characteristics.binding.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  tools.mdsd.characteristics.edit;visibility:=reexport,
@@ -21,5 +22,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
  tools.mdsd.modelingfoundations.identifier.edit;bundle-version="0.1.0";visibility:=reexport,
+ tools.mdsd.somde.realm.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

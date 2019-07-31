@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated basicproperties -->
+      <package
+            uri="http://www.mdsd.tools/characteristics/properties/basic/1.0"
+            class="tools.mdsd.characteristics.properties.basic.BasicPackage"
+            genModel="model/basicproperties.genmodel"/>
+   </extension>
+
+</plugin>

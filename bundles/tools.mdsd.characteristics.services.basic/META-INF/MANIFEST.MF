@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MDSD.tools Characteristics Modeling Providers for Valuetype Base Properties
+Bundle-SymbolicName: tools.mdsd.characteristics.services.basic;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Automatic-Module-Name: tools.mdsd.characteristics.provider.baseproperties
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: tools.mdsd.characteristics,
+ tools.mdsd.characteristics.properties.basic,
+ tools.mdsd.somde.services;bundle-version="1.0.0"

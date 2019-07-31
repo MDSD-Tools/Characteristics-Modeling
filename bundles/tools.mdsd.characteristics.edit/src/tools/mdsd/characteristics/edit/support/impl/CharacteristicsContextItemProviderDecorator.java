@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.WeakHashMap;
-
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -18,7 +17,6 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemProviderDecorator;
-
 import tools.mdsd.characteristics.binding.BindingPackage;
 import tools.mdsd.characteristics.binding.CharacteristicBinding;
 import tools.mdsd.characteristics.binding.CharacterizationContext;
@@ -108,7 +106,7 @@ public class CharacteristicsContextItemProviderDecorator extends AdapterItemProv
 			CharacteristicBinding binding = optBinding.get();
 			SingleValue manifestation = ManifestationFactory.eINSTANCE.createSingleValue();
 			result.append(super.createCommand(binding, domain, commandClass, new CommandParameter(binding,
-					BindingPackage.eINSTANCE.getManifestationContainer_Manifestation(), manifestation)));
+					ManifestationPackage.eINSTANCE.getManifestationContainer_Manifestation(), manifestation)));
 			result.append(super.createCommand(manifestation, domain, commandClass,
 					new CommandParameter(manifestation,
 							ManifestationPackage.eINSTANCE.getStaticManifestation_Value(),

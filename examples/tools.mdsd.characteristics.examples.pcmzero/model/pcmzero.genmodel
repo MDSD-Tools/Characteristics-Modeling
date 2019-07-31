@@ -7,7 +7,7 @@
     modelPluginID="tools.mdsd.characteristics.examples.pcmzero" modelName="Pcmzero"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="10.0" copyrightFields="false"
-    usedGenPackages="../../tools.mdsd.characteristics.model/model/characteristics.genmodel#//characteristics ../../tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
+    usedGenPackages="../../tools.mdsd.characteristics/model/characteristics.genmodel#//characteristics ../../tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
     operationReflection="true" importOrganizing="true">
   <foreignModel>pcmzero.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>

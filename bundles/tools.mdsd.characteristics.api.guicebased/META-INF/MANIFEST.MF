@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: tools.mdsd.characteristics.api.guicebased
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: tools.mdsd.characteristics.api.guicebased.guicebasedapi,
  tools.mdsd.characteristics.api.guicebased.guicebasedapi.impl,
  tools.mdsd.characteristics.api.guicebased.guicebasedapi.util

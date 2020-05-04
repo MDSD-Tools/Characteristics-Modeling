@@ -4,7 +4,7 @@ Bundle-Name: MDSD.tools Characteristics Modeling Providers for Valuetype Base Pr
 Bundle-SymbolicName: tools.mdsd.characteristics.api.baseproperties;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Automatic-Module-Name: tools.mdsd.characteristics.provider.baseproperties
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: tools.mdsd.characteristics;bundle-version="0.1.0"
 Export-Package: tools.mdsd.characteristics.api.baseproperties
 Import-Package: com.google.inject,
